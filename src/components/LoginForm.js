@@ -1,21 +1,31 @@
 import React, { Component } from 'react';
-import { TextInput } from 'react-native';
-import { Button, Card, CardSection } from './common';
+// import { StyleSheet } from 'react-native';
+import { Button, Card, CardSection, Input } from './common';
 
 class LoginForm extends Component {
-    state = { text: '' };
+    state = { email: '', password: '' };
 
     render() {
         return (
             <Card>
                 <CardSection>
-                    <TextInput
-                        value={ this.state.text }
-                        onChangeText={text => this.setState({ text: text })}
-                        style={ styles.TextInput }
-                        editable={true} />
+                    <Input
+                        value={ this.state.email }
+                        secureTextEntry={false}
+                        onChangeText={text => this.setState({ email: text })}
+                        label="Email"
+                        placeholder="user@example.com"
+                        />
                 </CardSection>
-                <CardSection />
+                <CardSection>
+                <Input
+                        value={ this.state.password }
+                        secureTextEntry={true}
+                        onChangeText={text => this.setState({ password: text })}
+                        label="Password"
+                        placeholder="password"
+                        />
+                </CardSection>
                 <CardSection>
                     <Button>
                         Log in
@@ -27,12 +37,3 @@ class LoginForm extends Component {
 }
 export default LoginForm;
 
-const styles={
-    TextInput: {
-        height: 20,
-        width: 100,
-        color: '#000',
-        paddingBottom: 0,
-        paddingTop: 0,
-    },
-};
