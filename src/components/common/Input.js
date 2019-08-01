@@ -22,7 +22,7 @@ const Input= ({ label, value, onChangeText, placeholder, secureTextEntry }) => {
     );
 };
 
-const styles=StyleSheet.create({
+const styles = StyleSheet.create({
     inputStyle: {
         color: '#000',
         backgroundColor: '#ddd',
